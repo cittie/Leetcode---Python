@@ -5,9 +5,11 @@ class Solution(object):
         :rtype: int
         """
         count = 0
+        size_x = len(board)
 
-        for x in range(len(board)):
-            for y in range(len(board[x])):
+        for x in range(size_x):
+            size_y = len(board[x])
+            for y in range(size_y):
                 if board[x][y] == 'X':
                     if x > 0 and board[x-1][y] == 'X':
                         continue

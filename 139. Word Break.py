@@ -8,10 +8,12 @@ class Solution(object):
         if not s or not wordDict:
             return False
 
-        flags = [False for i in range(len(s) + 1)]
+        size = len(s) + 1
+
+        flags = [False] * size
         flags[0] = True
 
-        for s_len in range(1, len(s) + 1):
+        for s_len in range(1, size):
             for i in range(s_len):
                 if flags[i] and s[i:s_len] in wordDict:
                     flags[s_len] = True

@@ -7,15 +7,16 @@ class Solution(object):
         """
         nums1_dict = {}
         nums2_dict = {}
+        size1, size2 = len(nums1), len(nums2)
         result = []
-        
-        for i in range(len(nums1)):
+
+        for i in range(size1):
             if nums1[i] in nums1_dict:
                 nums1_dict[nums1[i]] += 1
             else:
                 nums1_dict[nums1[i]] = 1
-        
-        for j in range(len(nums2)):
+
+        for j in range(size2):
             if nums2[j] in nums1_dict:
                 if nums2[j] in nums2_dict:
                     if nums2_dict[nums2[j]] < nums1_dict[nums2[j]]:
@@ -24,6 +25,5 @@ class Solution(object):
                 else:
                     nums2_dict[nums2[j]] = 1
                     result.append(nums2[j])
-        
+
         return result
-        

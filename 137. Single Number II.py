@@ -7,13 +7,14 @@ class Solution(object):
         ones = 0
         twos = 0
         xthrees = 0
-        
-        for i in range(len(nums)):
+
+        size = len(nums)
+
+        for i in range(size):
             twos |= ones & nums[i]
             ones ^= nums[i]
             xthrees = ~ ( ones & twos)
             twos &= xthrees
             ones &= xthrees
-            
+
         return ones
-        
