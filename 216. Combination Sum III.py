@@ -20,9 +20,8 @@ class Solution(object):
                 return
 
             for i in range(num + 1, 10):
-                search(i, nums + [i] )
+                search(i, nums + [i])
 
         search()
 
         return result
-        
