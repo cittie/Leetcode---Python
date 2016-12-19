@@ -7,6 +7,5 @@ class Solution(object):
         if nums[-1] >= nums[0]:
             return nums[0]
         else:
-            mid = (len(nums) - 1) / 2
+            mid = (len(nums) - 1) >> 1
             return min(self.findMin(nums[:mid + 1]), self.findMin(nums[mid + 1:]))
-        
