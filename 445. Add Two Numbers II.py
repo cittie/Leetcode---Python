@@ -24,26 +24,17 @@ class Solution(object):
             stack2.append(l2)
             l2 = l2.next
 
-        while stack1 or stack2:
+        while stack1 or stack2 or plusOne:
 
             val1 = stack1.pop().val if stack1 else 0
             val2 = stack2.pop().val if stack2 else 0
             total = val1 + val2 + plusOne
 
-            if total > 9:
-                plusOne = 1
-                node = ListNode(total - 10)
-            else:
-                plusOne = 0
-                node = ListNode(total)
+            plusOne = total / 10
 
-            node.next = last
-            last = node
-
-        # Additional situation
-        if plusOne:
-            node = ListNode(1)
+            node = ListNode(total % 10)
             node.next = last
             last = node
 
         return last
+        
