@@ -6,12 +6,11 @@ class Solution(object):
         :rtype: List[List[int]]
         """
 
+        n = len(candidates)
         candidates.sort()
         result = []
-        n = len(candidates)
 
         def dfs(nums = [], index = 0):
-            nums.sort()
             total = sum(nums)
 
             if total == target:
@@ -20,9 +19,7 @@ class Solution(object):
                 for i in range(index, n):
                     cur = candidates[i]
                     if cur + total <= target:
-                        nums.append(cur)
-                        dfs(nums[:], i)
-                        nums.pop()
+                        dfs(nums + [cur], i)
                     else:
                         break
 
