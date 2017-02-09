@@ -17,4 +17,3 @@ class Solution(object):
             num /= 10
 
         return rev_num == x
-    
